@@ -21,8 +21,13 @@ public class main {
                     if(matchesTag){
                         goodInput = true;
                     }
-                }else { // arg should be an integer
-                    System.out.print("");
+                }else { // arg should be a digit
+                    try{
+                        Integer.parseInt(args[i]);
+                    }catch(NumberFormatException e){
+                        //not a digit
+                        goodInput = false;
+                    }
                 }
             }
         }
@@ -34,5 +39,8 @@ public class main {
         }else {
             System.out.print("Good input"); //todo: delete
         }
+        
+
+
     }
 }
