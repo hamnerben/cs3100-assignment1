@@ -7,7 +7,7 @@ if args.lenth is even:
     good input = True
     for arg
         if sanity check on arg fails
-        good input = False
+            good input = False
 
 if not goodInput:
     print error message
