@@ -1,6 +1,6 @@
 import java.util.Objects;
 
-public class main {
+public class Assign1 {
     public static void main(String[] args) {
 
         String[] tags = {"-fib", "-fac", "-e"};

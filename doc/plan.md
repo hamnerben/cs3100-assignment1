@@ -1,4 +1,4 @@
-## `main.java`
+## `Assign1.java`
 
 ```
 // check for good input
@@ -12,7 +12,7 @@ if args.lenth is even:
 if not goodInput:
     print error message
 
-// main proccess
+// Assign1 proccess
 for arg tag // iterate by 2 not one so it skips the numbers
     if(tag == fib)
         fib(arg + 1)
