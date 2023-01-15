@@ -1,9 +1,49 @@
+import java.math.BigInteger;
 import java.util.Objects;
 
 public class Assign1 {
-    public static void main(String[] args) {
+    static String[] tags = {"-fib", "-fac", "-e"};
+    static int[] fibRange = { 0, 40 };
+    static int[] facRange = { 0, 2147483647 };
+    static int[] eRange = { 0, 2147483647 };
 
-        String[] tags = {"-fib", "-fac", "-e"};
+    /**
+     * accepts an int and prints a state finding the fibonacci number
+     * @param n the number to find the fibonacci number
+     */
+    public static void fib(int n) {
+        if(n < fibRange[0] || n > fibRange[1]){
+            System.out.println("Fibonacci valid range is [" + fibRange[0] + ", " + fibRange[1] + "]");
+        }else {
+            System.out.println("Fibonacci of " + n + " is " + fibRecursive(n+1));
+        }
+    }
+
+    /***
+     * recursive method to find the fibonacci number
+     * @param n int to pass down through the recursion
+     * @return previous iteration of the fib nubmer
+     */
+    private static int fibRecursive(int n){
+        if (n <= 1)
+            return n;
+        return fibRecursive(n - 1) + fibRecursive(n - 2);
+    }
+
+    public static void fac(int n) {
+        if(n < facRange[0] || n > facRange[1]){
+            System.out.println("Factorial valid range is [" + facRange[0] + ", " + facRange[1] + "]");
+        }else {
+            BigInteger fact = new BigInteger("1");
+            for(int i = 1; i < n; i++){
+                fact = fact.multiply(BigInteger.valueOf(i));
+            }
+
+            System.out.println("Factorial of " + n + " is " + fact);
+        }
+    }
+
+    public static void main(String[] args) {
 
         // sanity check on arguments
         boolean goodInput = false;
@@ -37,10 +77,11 @@ public class Assign1 {
                     "-fac [n] : Compute the factorial of [n]; valid range, [0, 2147483647]\n" +
                     "-e [n] : Compute the value of 'e' using [n] iterations; valid range [1, 2147483647]");
         }else {
-            System.out.print("Good input"); //todo: delete
+            System.out.println("Good input"); //todo: delete
+            fib(40);
         }
-        
-
-
     }
+
+
+
 }
