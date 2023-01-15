@@ -1,3 +1,4 @@
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Objects;
 
@@ -30,18 +31,38 @@ public class Assign1 {
         return fibRecursive(n - 1) + fibRecursive(n - 2);
     }
 
+    /**
+     * prints a statement describing the factorial of input
+     * @param n the input to determine the factorial of
+     */
     public static void fac(int n) {
         if(n < facRange[0] || n > facRange[1]){
             System.out.println("Factorial valid range is [" + facRange[0] + ", " + facRange[1] + "]");
         }else {
-            BigInteger fact = BigInteger.ONE;
-            for(int i = 1; i <= n; i++){
-                fact = fact.multiply(BigInteger.valueOf(i));
-            }
-
+                BigInteger fact = getFac(n);
             System.out.println("Factorial of " + n + " is " + fact);
         }
     }
+
+
+    private static BigInteger getFac(int n) {
+        BigInteger fact = BigInteger.ONE;
+        for (int i = 1; i <= n; i++) {
+            fact = fact.multiply(BigInteger.valueOf(i));
+        }
+        return fact;
+        }
+//
+//    public static void e(int n){
+//        if(n < eRange[0] || n > eRange[1]){
+//            System.out.println("e valid range is [" + eRange[0] + ", " + eRange[1] + "]");
+//        }else {
+//            BigDecimal e = BigDecimal.ONE;
+//            for(int i = 1; i < n; i++){
+//                e = e.add( 1 / fac(i) ;)
+//            }
+//        }
+//
 
     public static void main(String[] args) {
 
