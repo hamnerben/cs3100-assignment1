@@ -79,6 +79,7 @@ public class Assign1 {
         }else {
             System.out.println("Good input"); //todo: delete
             fib(40);
+            fac(9);
         }
     }
 
