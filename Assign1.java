@@ -34,8 +34,8 @@ public class Assign1 {
         if(n < facRange[0] || n > facRange[1]){
             System.out.println("Factorial valid range is [" + facRange[0] + ", " + facRange[1] + "]");
         }else {
-            BigInteger fact = new BigInteger("1");
-            for(int i = 1; i < n; i++){
+            BigInteger fact = BigInteger.ONE;
+            for(int i = 1; i <= n; i++){
                 fact = fact.multiply(BigInteger.valueOf(i));
             }
 
@@ -78,8 +78,8 @@ public class Assign1 {
                     "-e [n] : Compute the value of 'e' using [n] iterations; valid range [1, 2147483647]");
         }else {
             System.out.println("Good input"); //todo: delete
-            fib(40);
-            fac(9);
+            fac(10);
+            fac(0);
         }
     }
 
