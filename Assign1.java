@@ -1,5 +1,7 @@
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.math.MathContext;
+import java.math.RoundingMode;
 import java.util.Objects;
 
 public class Assign1 {
@@ -52,17 +54,19 @@ public class Assign1 {
         }
         return fact;
         }
-//
-//    public static void e(int n){
-//        if(n < eRange[0] || n > eRange[1]){
-//            System.out.println("e valid range is [" + eRange[0] + ", " + eRange[1] + "]");
-//        }else {
-//            BigDecimal e = BigDecimal.ONE;
-//            for(int i = 1; i < n; i++){
-//                e = e.add( 1 / fac(i) ;)
-//            }
-//        }
-//
+
+    public static void e(int n) {
+        if (n < eRange[0] || n > eRange[1]) {
+            System.out.println("e valid range is [" + eRange[0] + ", " + eRange[1] + "]");
+        } else {
+            BigDecimal e = BigDecimal.ONE;
+            for (int i = 1; i < n; i++) {
+                e = e.add(BigDecimal.ONE.divide(new BigDecimal(getFac(i)), new MathContext(10, RoundingMode.HALF_UP)));
+            }
+            System.out.println("Value of e using " + n + " iterations is " + e);
+        }
+    }
+
 
     public static void main(String[] args) {
 
@@ -99,8 +103,7 @@ public class Assign1 {
                     "-e [n] : Compute the value of 'e' using [n] iterations; valid range [1, 2147483647]");
         }else {
             System.out.println("Good input"); //todo: delete
-            fac(10);
-            fac(0);
+            e(10);
         }
     }
 
